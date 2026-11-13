@@ -1,0 +1,454 @@
+/* =========================================================
+   LE QUAI FLEURI — feuille de style
+   Approche "mobile d'abord" : on écrit d'abord le style
+   pour téléphone, puis on l'adapte aux grands écrans
+   avec des @media en bas du fichier.
+   ========================================================= */
+
+
+/* ---------- 1. VARIABLES ----------
+   On range les couleurs et les tailles ici.
+   Pour changer la couleur principale du site entier,
+   il suffit de modifier une seule ligne. */
+:root {
+  --couleur-fond: #faf7f2;        /* crème clair */
+  --couleur-fond-2: #f0ebe1;      /* crème plus foncé, pour alterner les sections */
+  --couleur-texte: #2b2a27;       /* presque noir, plus doux que le noir pur */
+  --couleur-texte-doux: #6b675f;  /* gris chaud pour les descriptions */
+  --couleur-accent: #2f5d50;      /* vert lac */
+  --couleur-accent-fonce: #234539;
+  --couleur-sombre: #1f2b27;      /* fond de la section réservation */
+
+  --police-titre: "Fraunces", Georgia, serif;
+  --police-texte: "Inter", Arial, sans-serif;
+
+  --rayon: 10px;                  /* arrondi des coins */
+  --largeur-max: 1100px;          /* largeur maximale du contenu */
+}
+
+
+/* ---------- 2. BASE ---------- */
+
+/* box-sizing: border-box = la largeur d'un élément inclut ses bordures et marges intérieures.
+   Ça rend les tailles beaucoup plus prévisibles. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* défilement doux quand on clique sur un lien du menu */
+}
+
+body {
+  margin: 0;
+  font-family: var(--police-texte);
+  font-size: 1rem;          /* 1rem = 16 pixels par défaut */
+  line-height: 1.6;         /* espace entre les lignes : plus lisible */
+  color: var(--couleur-texte);
+  background: var(--couleur-fond);
+}
+
+h1, h2, h3 {
+  font-family: var(--police-titre);
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: var(--couleur-accent);
+}
+
+
+/* ---------- 3. MISE EN PAGE ---------- */
+
+/* Le conteneur centre le contenu et laisse 20 px de marge sur les côtés du téléphone */
+.conteneur {
+  max-width: var(--largeur-max);
+  margin: 0 auto;        /* "auto" à gauche et à droite = centré */
+  padding: 0 20px;
+}
+
+.conteneur--etroit {
+  max-width: 680px;
+}
+
+.section {
+  padding: 64px 0;
+}
+
+.section--fond {
+  background: var(--couleur-fond-2);
+}
+
+.section--sombre {
+  background: var(--couleur-sombre);
+  color: #f3efe7;
+}
+
+.titre-section {
+  font-size: 1.9rem;
+  margin-bottom: 1em;
+}
+
+/* Grilles : sur téléphone, tout est en 1 colonne.
+   Les colonnes supplémentaires arrivent dans les @media plus bas. */
+.grille-2,
+.grille-3 {
+  display: grid;
+  gap: 32px;
+}
+
+
+/* ---------- 4. BOUTONS ---------- */
+
+.bouton {
+  display: inline-block;
+  padding: 14px 26px;
+  border-radius: 999px;   /* très grand arrondi = forme de pilule */
+  border: 2px solid var(--couleur-accent);
+  background: var(--couleur-accent);
+  color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s; /* changement de couleur en douceur */
+}
+
+/* :hover = au survol de la souris ; :focus-visible = quand on navigue au clavier */
+.bouton:hover,
+.bouton:focus-visible {
+  background: var(--couleur-accent-fonce);
+  border-color: var(--couleur-accent-fonce);
+}
+
+.bouton--contour {
+  background: transparent;
+  color: var(--couleur-accent);
+}
+
+.bouton--contour:hover,
+.bouton--contour:focus-visible {
+  color: #fff;
+}
+
+.bouton--petit {
+  padding: 8px 18px;
+  font-size: 0.9rem;
+}
+
+.bouton--clair {
+  background: #f3efe7;
+  border-color: #f3efe7;
+  color: var(--couleur-sombre);
+}
+
+.bouton--clair:hover,
+.bouton--clair:focus-visible {
+  background: #fff;
+  border-color: #fff;
+  color: var(--couleur-sombre);
+}
+
+
+/* ---------- 5. EN-TÊTE ---------- */
+
+.entete {
+  position: sticky;   /* l'en-tête reste collé en haut quand on défile */
+  top: 0;
+  z-index: 10;        /* passe au-dessus du reste de la page */
+  background: rgba(250, 247, 242, 0.92);
+  backdrop-filter: blur(8px);   /* flou derrière l'en-tête */
+  border-bottom: 1px solid #e6e0d4;
+}
+
+/* Flexbox : aligne le logo à gauche et le menu à droite */
+.entete__contenu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.logo {
+  font-family: var(--police-titre);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--couleur-texte);
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;   /* enlève les puces de la liste */
+}
+
+.nav a:not(.bouton) {
+  color: var(--couleur-texte);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.nav a:not(.bouton):hover {
+  color: var(--couleur-accent);
+}
+
+/* Sur très petit écran, on cache les liens texte pour garder seulement "Réserver" */
+.nav li:not(:last-child) {
+  display: none;
+}
+
+
+/* ---------- 6. ACCROCHE ---------- */
+
+.accroche {
+  padding: 72px 0 80px;
+  /* Dégradé en fond : remplace une photo, sans fichier image à charger */
+  background:
+    radial-gradient(circle at 85% 20%, rgba(47, 93, 80, 0.18), transparent 55%),
+    radial-gradient(circle at 10% 90%, rgba(214, 170, 110, 0.22), transparent 50%),
+    var(--couleur-fond);
+}
+
+.surtitre {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--couleur-accent);
+}
+
+.accroche h1 {
+  /* clamp(min, idéal, max) : la taille s'adapte à la largeur de l'écran */
+  font-size: clamp(2.3rem, 7vw, 4.2rem);
+}
+
+.accroche__texte {
+  max-width: 34em;   /* lignes pas trop longues = plus faciles à lire */
+  font-size: 1.1rem;
+  color: var(--couleur-texte-doux);
+}
+
+.accroche__boutons {
+  display: flex;
+  flex-wrap: wrap;   /* les boutons passent à la ligne s'il n'y a pas la place */
+  gap: 12px;
+  margin-top: 28px;
+}
+
+
+/* ---------- 7. POINTS FORTS ---------- */
+
+.atout {
+  padding: 28px;
+  background: #fff;
+  border-radius: var(--rayon);
+  border: 1px solid #ece6da;
+}
+
+.atout__icone {
+  font-size: 1.8rem;
+}
+
+.atout h2 {
+  font-size: 1.3rem;
+  margin-top: 12px;
+}
+
+.atout p {
+  margin: 0;
+  color: var(--couleur-texte-doux);
+}
+
+
+/* ---------- 8. LA CARTE ---------- */
+
+.categorie h3 {
+  font-size: 1.4rem;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--couleur-accent);
+}
+
+.plats {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Chaque plat : nom et description à gauche, prix à droite */
+.plat {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px dashed #d8d0c1;
+}
+
+.plat__nom {
+  margin: 0;
+  font-weight: 600;
+}
+
+.plat__desc {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--couleur-texte-doux);
+}
+
+.plat__prix {
+  font-weight: 600;
+  white-space: nowrap;   /* le prix ne se coupe jamais en deux lignes */
+}
+
+.note {
+  margin-top: 32px;
+  font-size: 0.85rem;
+  color: var(--couleur-texte-doux);
+}
+
+
+/* ---------- 9. HORAIRES ET ADRESSE ---------- */
+
+.horaires {
+  margin: 0;
+}
+
+.horaires div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid #e6e0d4;
+}
+
+.horaires dt {
+  font-weight: 600;
+}
+
+.horaires dd {
+  margin: 0;
+  text-align: right;
+  color: var(--couleur-texte-doux);
+}
+
+.adresse {
+  font-style: normal;   /* le navigateur met <address> en italique par défaut */
+}
+
+
+/* ---------- 10. FORMULAIRE ---------- */
+
+.formulaire {
+  display: grid;
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.champ label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.champ input,
+.champ select,
+.champ textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #4a5a54;
+  border-radius: 8px;
+  background: #2a3833;
+  color: #f3efe7;
+  font: inherit;   /* les champs prennent la même police que la page */
+}
+
+/* Contour visible quand on clique dans un champ : important pour l'accessibilité */
+.champ input:focus,
+.champ select:focus,
+.champ textarea:focus {
+  outline: 2px solid #c9e2d8;
+  outline-offset: 1px;
+}
+
+
+/* ---------- 11. PIED DE PAGE ---------- */
+
+.pied {
+  padding: 28px 0;
+  background: #161f1c;
+  color: #a9b3ae;
+  font-size: 0.85rem;
+}
+
+.pied p {
+  margin: 0;
+}
+
+.pied__mention {
+  margin-top: 4px;
+  /* Une couleur fixe plutôt qu'une transparence (opacity),
+     pour garder un contraste lisible : 5,6 (minimum conseillé : 4,5) */
+  color: #8c9792;
+}
+
+
+/* =========================================================
+   ADAPTATION AUX GRANDS ÉCRANS
+   min-width: 480px = "à partir de 480 pixels de large"
+   ========================================================= */
+
+/* Petit téléphone en largeur et plus : on réaffiche les liens du menu */
+@media (min-width: 480px) {
+  .nav li:not(:last-child) {
+    display: list-item;
+  }
+}
+
+/* Tablette et plus */
+@media (min-width: 720px) {
+  .section {
+    padding: 96px 0;
+  }
+
+  .accroche {
+    padding: 120px 0 128px;
+  }
+
+  .grille-2 {
+    grid-template-columns: 1fr 1fr;   /* 2 colonnes de même largeur */
+    gap: 48px;
+  }
+
+  /* Formulaire sur 2 colonnes ; les champs "larges" prennent toute la ligne */
+  .formulaire {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .champ--large {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Ordinateur */
+@media (min-width: 960px) {
+  .grille-3 {
+    grid-template-columns: repeat(3, 1fr);   /* 3 colonnes */
+  }
+}

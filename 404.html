@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- Page 404 : GitHub Pages l'affiche automatiquement quand une adresse n'existe pas,
+     à condition qu'elle s'appelle exactement 404.html et soit à la racine du site. -->
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page introuvable — Portfolio</title>
+  <!-- Demande à Google de ne pas ranger cette page dans ses résultats -->
+  <meta name="robots" content="noindex">
+  <!-- Adresse commençant par « / » : la favicon est trouvée même si l'adresse fautive
+       est dans un sous-dossier. -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  <!-- Style court, directement dans la page, avec les mêmes couleurs que l'accueil -->
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;   /* centre le contenu horizontalement et verticalement */
+      padding: 20px;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #22242a;
+      background: #f6f5f2;
+      text-align: center;
+    }
+
+    .code {
+      margin: 0;
+      font-family: Georgia, serif;
+      font-size: 5rem;
+      font-weight: bold;
+      color: #3d5a80;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-family: Georgia, serif;
+      font-size: 1.6rem;
+    }
+
+    p {
+      margin: 0 0 28px;
+      color: #5b5e66;
+    }
+
+    /* Le seul bouton de la page : ramener le visiteur à l'accueil */
+    .bouton {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 8px;
+      background: #3d5a80;
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .bouton:hover,
+    .bouton:focus-visible {
+      background: #2c4360;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="code">404</p>
+    <h1>Cette page n'existe pas.</h1>
+    <p>L'adresse est peut-être mal écrite, ou la page a été déplacée.</p>
+    <!-- Attention : sur GitHub Pages, si le site est dans un sous-dossier
+         (ex. monpseudo.github.io/portfolio), remplacer "/" par "/portfolio/". -->
+    <a class="bouton" href="/">Retour à l'accueil</a>
+  </main>
+</body>
+</html>

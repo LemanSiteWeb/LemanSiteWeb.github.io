@@ -1,0 +1,21 @@
+/* Polices copiées dans le site (au lieu de les charger chez Google Fonts).
+   Avantage : le navigateur du visiteur ne contacte aucun autre site,
+   donc aucune donnée n'est envoyée à Google.
+   Fraunces et Inter sont sous licence libre SIL Open Font License.
+   Ce sont des polices « variables » : un seul fichier contient toutes les graisses. */
+
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("fraunces.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("inter.woff2") format("woff2");
+}

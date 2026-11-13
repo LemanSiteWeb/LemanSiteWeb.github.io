@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<!-- La langue de la page : aide Google et les lecteurs d'écran -->
+<html lang="fr">
+<head>
+  <!-- Encodage : permet d'afficher les accents correctement -->
+  <meta charset="UTF-8">
+  <!-- Indispensable pour le mobile : la page prend la largeur de l'écran -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Le Quai Fleuri — Bistrot à Genève</title>
+  <!-- Texte affiché sous le titre dans les résultats Google -->
+  <meta name="description" content="Bistrot de saison au bord du lac, à Genève. Cuisine du marché, produits locaux. Projet fictif de portfolio.">
+
+  <!-- Favicon : la petite icône affichée dans l'onglet du navigateur -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- Aperçu quand on partage le lien (Open Graph, lu par les réseaux sociaux). -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Le Quai Fleuri — Bistrot à Genève">
+  <meta property="og:description" content="La cuisine du marché, face au lac. Projet fictif de portfolio.">
+  <meta property="og:image" content="https://lemansiteweb.github.io/restaurant/apercu.png">
+  <meta property="og:url" content="https://lemansiteweb.github.io/restaurant/">
+
+  <!-- Deux polices gratuites : une élégante pour les titres, une lisible pour le texte.
+       Elles sont copiées dans le site (dossier polices/) : rien n'est chargé chez Google. -->
+  <link rel="stylesheet" href="../polices/polices.css">
+
+  <!-- Notre feuille de style -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== EN-TÊTE : logo + menu de navigation ===== -->
+  <header class="entete">
+    <div class="conteneur entete__contenu">
+      <a href="#accueil" class="logo">Le Quai Fleuri</a>
+      <nav aria-label="Navigation principale">
+        <ul class="nav">
+          <li><a href="#carte">La carte</a></li>
+          <li><a href="#infos">Infos</a></li>
+          <li><a href="#reserver" class="bouton bouton--petit">Réserver</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== SECTION 1 : la grande accroche ===== -->
+    <section id="accueil" class="accroche">
+      <div class="conteneur">
+        <p class="surtitre">Bistrot de saison · Genève</p>
+        <h1>La cuisine du marché,<br>face au lac.</h1>
+        <p class="accroche__texte">
+          Des produits du canton, une carte qui change chaque semaine,
+          et une terrasse où l'on reste plus longtemps que prévu.
+        </p>
+        <div class="accroche__boutons">
+          <a href="#reserver" class="bouton">Réserver une table</a>
+          <a href="#carte" class="bouton bouton--contour">Voir la carte</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 2 : trois points forts ===== -->
+    <section class="section">
+      <div class="conteneur">
+        <!-- Une grille de 3 cartes : 1 colonne sur téléphone, 3 sur ordinateur (voir CSS) -->
+        <div class="grille-3">
+          <article class="atout">
+            <span class="atout__icone" aria-hidden="true">🌿</span>
+            <h2>Produits locaux</h2>
+            <p>Légumes de la campagne genevoise, poissons du Léman, fromages de la région.</p>
+          </article>
+          <article class="atout">
+            <span class="atout__icone" aria-hidden="true">🗓️</span>
+            <h2>Carte de saison</h2>
+            <p>Le chef compose une nouvelle carte chaque semaine selon les arrivages.</p>
+          </article>
+          <article class="atout">
+            <span class="atout__icone" aria-hidden="true">☀️</span>
+            <h2>Terrasse au bord de l'eau</h2>
+            <p>Quarante places au soleil, d'avril à octobre.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 3 : la carte ===== -->
+    <section id="carte" class="section section--fond">
+      <div class="conteneur">
+        <h2 class="titre-section">La carte de la semaine</h2>
+
+        <div class="grille-2">
+          <!-- Chaque catégorie est une liste de plats -->
+          <div class="categorie">
+            <h3>Entrées</h3>
+            <ul class="plats">
+              <li class="plat">
+                <div>
+                  <p class="plat__nom">Velouté de courge</p>
+                  <p class="plat__desc">Graines torréfiées, crème à la noisette</p>
+                </div>
+                <span class="plat__prix">14.–</span>
+              </li>
+              <li class="plat">
+                <div>
+                  <p class="plat__nom">Tartare de féra</p>
+                  <p class="plat__desc">Citron vert, concombre, herbes du jardin</p>
+                </div>
+                <span class="plat__prix">19.–</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="categorie">
+            <h3>Plats</h3>
+            <ul class="plats">
+              <li class="plat">
+                <div>
+                  <p class="plat__nom">Filets de perche du Léman</p>
+                  <p class="plat__desc">Beurre citronné, frites maison</p>
+                </div>
+                <span class="plat__prix">36.–</span>
+              </li>
+              <li class="plat">
+                <div>
+                  <p class="plat__nom">Risotto aux champignons</p>
+                  <p class="plat__desc">Parmesan affiné, huile de truffe</p>
+                </div>
+                <span class="plat__prix">29.–</span>
+              </li>
+              <li class="plat">
+                <div>
+                  <p class="plat__nom">Longeole et gratin</p>
+                  <p class="plat__desc">Spécialité genevoise, sauce au vin rouge</p>
+                </div>
+                <span class="plat__prix">32.–</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="categorie">
+            <h3>Desserts</h3>
+            <ul class="plats">
+              <li class="plat">
+                <div>
+                  <p class="plat__nom">Tarte aux pommes du verger</p>
+                  <p class="plat__desc">Glace vanille</p>
+                </div>
+                <span class="plat__prix">12.–</span>
+              </li>
+              <li class="plat">
+                <div>
+                  <p class="plat__nom">Mousse au chocolat</p>
+                  <p class="plat__desc">Fleur de sel, tuile croustillante</p>
+                </div>
+                <span class="plat__prix">11.–</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="categorie">
+            <h3>Menu du midi</h3>
+            <ul class="plats">
+              <li class="plat">
+                <div>
+                  <p class="plat__nom">Entrée + plat du jour</p>
+                  <p class="plat__desc">Du mardi au vendredi, de 11 h 30 à 14 h</p>
+                </div>
+                <span class="plat__prix">24.–</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="note">Prix en francs suisses, TVA comprise.</p>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 4 : horaires et adresse ===== -->
+    <section id="infos" class="section">
+      <div class="conteneur grille-2">
+        <div>
+          <h2 class="titre-section">Horaires</h2>
+          <!-- Une liste de définitions (dl) : parfait pour des paires jour / horaire -->
+          <dl class="horaires">
+            <div><dt>Lundi</dt><dd>Fermé</dd></div>
+            <div><dt>Mardi – Vendredi</dt><dd>11 h 30 – 14 h · 18 h 30 – 22 h</dd></div>
+            <div><dt>Samedi</dt><dd>18 h 30 – 23 h</dd></div>
+            <div><dt>Dimanche</dt><dd>11 h – 15 h (brunch)</dd></div>
+          </dl>
+        </div>
+        <div>
+          <h2 class="titre-section">Nous trouver</h2>
+          <!-- La balise address sert aux coordonnées de contact -->
+          <address class="adresse">
+            Le Quai Fleuri<br>
+            Quai Imaginaire 12<br>
+            1201 Genève<br><br>
+            <a href="tel:+41000000000">+41 00 000 00 00</a><br>
+            <a href="mailto:contact@exemple.ch">contact@exemple.ch</a>
+          </address>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 5 : formulaire de réservation ===== -->
+    <section id="reserver" class="section section--sombre">
+      <div class="conteneur conteneur--etroit">
+        <h2 class="titre-section">Réserver une table</h2>
+        <p>Pour les groupes de plus de 8 personnes, appelez-nous.</p>
+
+        <!-- Formulaire de démonstration : il n'envoie rien (action="#").
+             Pour un vrai client, on le relierait à un service comme Formspree. -->
+        <form class="formulaire" action="#" method="post">
+          <div class="champ">
+            <!-- Le "for" du label correspond à l'"id" du champ : cliquer sur le texte active le champ -->
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" name="nom" autocomplete="name" required>
+          </div>
+          <div class="champ">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+          <div class="champ">
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" required>
+          </div>
+          <div class="champ">
+            <label for="personnes">Personnes</label>
+            <select id="personnes" name="personnes">
+              <option>1</option>
+              <option selected>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+            </select>
+          </div>
+          <div class="champ champ--large">
+            <label for="message">Message (facultatif)</label>
+            <textarea id="message" name="message" rows="3"></textarea>
+          </div>
+          <button type="submit" class="bouton bouton--clair champ--large">Envoyer la demande</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== PIED DE PAGE ===== -->
+  <footer class="pied">
+    <div class="conteneur">
+      <p>© 2026 Le Quai Fleuri</p>
+      <p class="pied__mention">Restaurant fictif : page réalisée pour un portfolio.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

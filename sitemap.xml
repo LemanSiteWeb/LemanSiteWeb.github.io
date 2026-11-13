@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Plan du site pour Google : la liste de toutes les pages à indexer.     Ajouter une ligne <url> à chaque nouvelle page du portfolio. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://lemansiteweb.github.io/</loc>
+  </url>
+  <url>
+    <loc>https://lemansiteweb.github.io/restaurant/</loc>
+  </url>
+</urlset>

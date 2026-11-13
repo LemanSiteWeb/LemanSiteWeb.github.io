@@ -1,0 +1,9 @@
+# robots.txt : règles pour les robots des moteurs de recherche.
+# « * » = tous les robots ; « Allow: / » = ils peuvent tout visiter.
+User-agent: *
+Allow: /
+
+# Où trouver le plan du site.
+# Attention : Google ne lit robots.txt qu'à la racine d'un domaine
+# (ex. monpseudo.github.io/robots.txt), pas dans un sous-dossier.
+Sitemap: https://lemansiteweb.github.io/sitemap.xml
